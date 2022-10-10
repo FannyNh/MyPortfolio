@@ -1,6 +1,6 @@
-import { getCurrentInstance, ref, onServerPrefetch, toRef, isRef, computed, defineAsyncComponent, defineComponent, inject, provide, h, Suspense, Transition, reactive, Text, resolveComponent, useSSRContext, watch, useSlots, toRefs, unref, watchEffect, markRaw, shallowRef, createApp, onErrorCaptured, withCtx, createVNode } from 'vue';
+import { getCurrentInstance, ref, onServerPrefetch, toRef, isRef, computed, defineAsyncComponent, defineComponent, inject, provide, h, Suspense, Transition, reactive, unref, watch, Text, resolveComponent, useSSRContext, useSlots, toRefs, mergeProps, withCtx, createVNode, toDisplayString, watchEffect, markRaw, shallowRef, createApp, effectScope, onErrorCaptured, isReactive, toRaw, onUnmounted, nextTick } from 'vue';
 import { $fetch as $fetch$1 } from 'ohmyfetch';
-import { withBase, joinURL, hasProtocol, withLeadingSlash, isEqual as isEqual$1, withoutTrailingSlash, parseURL } from 'ufo';
+import { withBase, withLeadingSlash, joinURL, hasProtocol, withoutTrailingSlash, isEqual as isEqual$1, parseURL } from 'ufo';
 import { createHooks } from 'hookable';
 import { getContext, executeAsync } from 'unctx';
 import { RouterView, createMemoryHistory, createRouter } from 'vue-router';
@@ -13,7 +13,7 @@ import { find, html } from 'property-information';
 import htmlTags from 'html-tags';
 import { hash, isEqual } from 'ohash';
 import { parse, serialize } from 'cookie-es';
-import { ssrRenderSuspense, ssrRenderComponent, ssrRenderAttrs } from 'vue/server-renderer';
+import { ssrRenderComponent, ssrRenderClass, ssrRenderAttr, ssrInterpolate, ssrRenderSuspense } from 'vue/server-renderer';
 import { a as useRuntimeConfig$1 } from '../nitro/node-server.mjs';
 import 'node-fetch-native/polyfill';
 import 'http';
@@ -543,40 +543,45 @@ const preload = defineNuxtPlugin((nuxtApp) => {
   });
 });
 const components = {
+  BlockText: defineAsyncComponent(() => import('./_nuxt/BlockText.351f642a.mjs').then((c) => c.default || c)),
+  Card: defineAsyncComponent(() => import('./_nuxt/Card.10dae511.mjs').then((c) => c.default || c)),
+  Description: defineAsyncComponent(() => import('./_nuxt/Description.b77e971b.mjs').then((c) => c.default || c)),
+  Slider: defineAsyncComponent(() => import('./_nuxt/Slider.712e20f4.mjs').then((c) => c.default || c)),
+  TagsList: defineAsyncComponent(() => import('./_nuxt/TagsList.393ed386.mjs').then((c) => c.default || c)),
   ContentDoc: defineAsyncComponent(() => Promise.resolve().then(() => ContentDoc).then((c) => c.default || c)),
-  ContentList: defineAsyncComponent(() => import('./_nuxt/ContentList.7488b1ba.mjs').then((c) => c.default || c)),
-  ContentNavigation: defineAsyncComponent(() => import('./_nuxt/ContentNavigation.8530af84.mjs').then((c) => c.default || c)),
+  ContentList: defineAsyncComponent(() => import('./_nuxt/ContentList.9306c649.mjs').then((c) => c.default || c)),
+  ContentNavigation: defineAsyncComponent(() => import('./_nuxt/ContentNavigation.d4bed1ef.mjs').then((c) => c.default || c)),
   ContentQuery: defineAsyncComponent(() => Promise.resolve().then(() => ContentQuery).then((c) => c.default || c)),
   ContentRenderer: defineAsyncComponent(() => Promise.resolve().then(() => ContentRenderer).then((c) => c.default || c)),
   ContentRendererMarkdown: defineAsyncComponent(() => Promise.resolve().then(() => ContentRendererMarkdown).then((c) => c.default || c)),
-  ContentSlot: defineAsyncComponent(() => import('./_nuxt/ContentSlot.eabf40b1.mjs').then((c) => c.default || c)),
+  ContentSlot: defineAsyncComponent(() => import('./_nuxt/ContentSlot.0a51be70.mjs').then((c) => c.default || c)),
   DocumentDrivenEmpty: defineAsyncComponent(() => import('./_nuxt/DocumentDrivenEmpty.b1426f16.mjs').then((c) => c.default || c)),
   DocumentDrivenNotFound: defineAsyncComponent(() => import('./_nuxt/DocumentDrivenNotFound.b4d3af5a.mjs').then((c) => c.default || c)),
-  Markdown: defineAsyncComponent(() => import('./_nuxt/Markdown.99cf3f91.mjs').then((c) => c.default || c)),
-  ProseA: defineAsyncComponent(() => import('./_nuxt/ProseA.299fc334.mjs').then((c) => c.default || c)),
-  ProseBlockquote: defineAsyncComponent(() => import('./_nuxt/ProseBlockquote.5a6b9faf.mjs').then((c) => c.default || c)),
-  ProseCode: defineAsyncComponent(() => import('./_nuxt/ProseCode.d1d4a55b.mjs').then((c) => c.default || c)),
-  ProseCodeInline: defineAsyncComponent(() => import('./_nuxt/ProseCodeInline.f20334da.mjs').then((c) => c.default || c)),
-  ProseEm: defineAsyncComponent(() => import('./_nuxt/ProseEm.a7b0b067.mjs').then((c) => c.default || c)),
-  ProseH1: defineAsyncComponent(() => import('./_nuxt/ProseH1.591fb6bf.mjs').then((c) => c.default || c)),
+  Markdown: defineAsyncComponent(() => import('./_nuxt/Markdown.dcb3b851.mjs').then((c) => c.default || c)),
+  ProseA: defineAsyncComponent(() => import('./_nuxt/ProseA.e459e900.mjs').then((c) => c.default || c)),
+  ProseBlockquote: defineAsyncComponent(() => import('./_nuxt/ProseBlockquote.18c20ca1.mjs').then((c) => c.default || c)),
+  ProseCode: defineAsyncComponent(() => import('./_nuxt/ProseCode.bbedd0f4.mjs').then((c) => c.default || c)),
+  ProseCodeInline: defineAsyncComponent(() => import('./_nuxt/ProseCodeInline.cd046a03.mjs').then((c) => c.default || c)),
+  ProseEm: defineAsyncComponent(() => import('./_nuxt/ProseEm.9ee7213e.mjs').then((c) => c.default || c)),
+  ProseH1: defineAsyncComponent(() => import('./_nuxt/ProseH1.9622a8bd.mjs').then((c) => c.default || c)),
   ProseH2: defineAsyncComponent(() => import('./_nuxt/ProseH2.2eed3f9b.mjs').then((c) => c.default || c)),
   ProseH3: defineAsyncComponent(() => import('./_nuxt/ProseH3.0183651a.mjs').then((c) => c.default || c)),
   ProseH4: defineAsyncComponent(() => import('./_nuxt/ProseH4.d2383709.mjs').then((c) => c.default || c)),
-  ProseH5: defineAsyncComponent(() => import('./_nuxt/ProseH5.095276db.mjs').then((c) => c.default || c)),
-  ProseH6: defineAsyncComponent(() => import('./_nuxt/ProseH6.07cc2bfb.mjs').then((c) => c.default || c)),
-  ProseHr: defineAsyncComponent(() => import('./_nuxt/ProseHr.e0d5921b.mjs').then((c) => c.default || c)),
+  ProseH5: defineAsyncComponent(() => import('./_nuxt/ProseH5.cb354057.mjs').then((c) => c.default || c)),
+  ProseH6: defineAsyncComponent(() => import('./_nuxt/ProseH6.67292785.mjs').then((c) => c.default || c)),
+  ProseHr: defineAsyncComponent(() => import('./_nuxt/ProseHr.3741cc5b.mjs').then((c) => c.default || c)),
   ProseImg: defineAsyncComponent(() => import('./_nuxt/ProseImg.4debdb73.mjs').then((c) => c.default || c)),
-  ProseLi: defineAsyncComponent(() => import('./_nuxt/ProseLi.9c8c689a.mjs').then((c) => c.default || c)),
-  ProseOl: defineAsyncComponent(() => import('./_nuxt/ProseOl.d89c2ab7.mjs').then((c) => c.default || c)),
-  ProseP: defineAsyncComponent(() => import('./_nuxt/ProseP.42fdcbbc.mjs').then((c) => c.default || c)),
-  ProseStrong: defineAsyncComponent(() => import('./_nuxt/ProseStrong.04f17d61.mjs').then((c) => c.default || c)),
-  ProseTable: defineAsyncComponent(() => import('./_nuxt/ProseTable.20081a8e.mjs').then((c) => c.default || c)),
-  ProseTbody: defineAsyncComponent(() => import('./_nuxt/ProseTbody.d6180afa.mjs').then((c) => c.default || c)),
-  ProseTd: defineAsyncComponent(() => import('./_nuxt/ProseTd.6d251472.mjs').then((c) => c.default || c)),
-  ProseTh: defineAsyncComponent(() => import('./_nuxt/ProseTh.869a991c.mjs').then((c) => c.default || c)),
-  ProseThead: defineAsyncComponent(() => import('./_nuxt/ProseThead.dae475b5.mjs').then((c) => c.default || c)),
-  ProseTr: defineAsyncComponent(() => import('./_nuxt/ProseTr.b25f93df.mjs').then((c) => c.default || c)),
-  ProseUl: defineAsyncComponent(() => import('./_nuxt/ProseUl.a52b508e.mjs').then((c) => c.default || c))
+  ProseLi: defineAsyncComponent(() => import('./_nuxt/ProseLi.8a94de2e.mjs').then((c) => c.default || c)),
+  ProseOl: defineAsyncComponent(() => import('./_nuxt/ProseOl.f6075324.mjs').then((c) => c.default || c)),
+  ProseP: defineAsyncComponent(() => import('./_nuxt/ProseP.f8df84d8.mjs').then((c) => c.default || c)),
+  ProseStrong: defineAsyncComponent(() => import('./_nuxt/ProseStrong.a3981451.mjs').then((c) => c.default || c)),
+  ProseTable: defineAsyncComponent(() => import('./_nuxt/ProseTable.71e474bd.mjs').then((c) => c.default || c)),
+  ProseTbody: defineAsyncComponent(() => import('./_nuxt/ProseTbody.f2f29787.mjs').then((c) => c.default || c)),
+  ProseTd: defineAsyncComponent(() => import('./_nuxt/ProseTd.e7d2e285.mjs').then((c) => c.default || c)),
+  ProseTh: defineAsyncComponent(() => import('./_nuxt/ProseTh.8635a3bf.mjs').then((c) => c.default || c)),
+  ProseThead: defineAsyncComponent(() => import('./_nuxt/ProseThead.fb103e46.mjs').then((c) => c.default || c)),
+  ProseTr: defineAsyncComponent(() => import('./_nuxt/ProseTr.3f4de13f.mjs').then((c) => c.default || c)),
+  ProseUl: defineAsyncComponent(() => import('./_nuxt/ProseUl.30896169.mjs').then((c) => c.default || c))
 };
 const _nuxt_components_plugin_mjs_KR1HBZs4kY = defineNuxtPlugin((nuxtApp) => {
   for (const name in components) {
@@ -608,8 +613,8 @@ var HEAD_COUNT_KEY = `head:count`;
 var HEAD_ATTRS_KEY = `data-head-attrs`;
 var SELF_CLOSING_TAGS = ["meta", "link", "base"];
 var BODY_TAG_ATTR_NAME = `data-meta-body`;
-var createElement = (tag, attrs, document) => {
-  const el = document.createElement(tag);
+var createElement = (tag, attrs, document2) => {
+  const el = document2.createElement(tag);
   for (const key of Object.keys(attrs)) {
     if (key === "body" && attrs.body === true) {
       el.setAttribute(BODY_TAG_ATTR_NAME, "true");
@@ -743,10 +748,10 @@ var setAttrs = (el, attrs) => {
     el.removeAttribute(HEAD_ATTRS_KEY);
   }
 };
-var updateElements = (document = window.document, type, tags) => {
+var updateElements = (document2 = window.document, type, tags) => {
   var _a, _b;
-  const head = document.head;
-  const body = document.body;
+  const head = document2.head;
+  const body = document2.body;
   let headCountEl = head.querySelector(`meta[name="${HEAD_COUNT_KEY}"]`);
   let bodyMetaElements = body.querySelectorAll(`[${BODY_TAG_ATTR_NAME}]`);
   const headCount = headCountEl ? Number(headCountEl.getAttribute("content")) : 0;
@@ -766,7 +771,7 @@ var updateElements = (document = window.document, type, tags) => {
       }
     }
   } else {
-    headCountEl = document.createElement("meta");
+    headCountEl = document2.createElement("meta");
     headCountEl.setAttribute("name", HEAD_COUNT_KEY);
     headCountEl.setAttribute("content", "0");
     head.append(headCountEl);
@@ -774,7 +779,7 @@ var updateElements = (document = window.document, type, tags) => {
   let newElements = tags.map((tag) => {
     var _a2;
     return {
-      element: createElement(tag.tag, tag.props, document),
+      element: createElement(tag.tag, tag.props, document2),
       body: (_a2 = tag.props.body) != null ? _a2 : false
     };
   });
@@ -861,7 +866,7 @@ var createHead = (initHeadObject) => {
     removeHeadObjs(objs) {
       allHeadObjs = allHeadObjs.filter((_objs) => _objs !== objs);
     },
-    updateDOM(document = window.document) {
+    updateDOM(document2 = window.document) {
       let title;
       let htmlAttrs = {};
       let bodyAttrs = {};
@@ -883,13 +888,13 @@ var createHead = (initHeadObject) => {
         actualTags[tag.tag].push(tag);
       }
       if (title !== void 0) {
-        document.title = title;
+        document2.title = title;
       }
-      setAttrs(document.documentElement, htmlAttrs);
-      setAttrs(document.body, bodyAttrs);
+      setAttrs(document2.documentElement, htmlAttrs);
+      setAttrs(document2.body, bodyAttrs);
       const tags = /* @__PURE__ */ new Set([...Object.keys(actualTags), ...previousTags]);
       for (const tag of tags) {
-        updateElements(document, tag, actualTags[tag] || []);
+        updateElements(document2, tag, actualTags[tag] || []);
       }
       previousTags.clear();
       Object.keys(actualTags).forEach((i) => previousTags.add(i));
@@ -1389,7 +1394,7 @@ const rxOn = /^@|^v-on:/;
 const rxBind = /^:|^v-bind:/;
 const rxModel = /^v-model/;
 const nativeInputs = ["select", "textarea", "input"];
-const _sfc_main$5 = defineComponent({
+const _sfc_main$6 = defineComponent({
   name: "ContentRendererMarkdown",
   props: {
     value: {
@@ -1551,14 +1556,14 @@ function propsToData(node, documentMeta) {
 function propsToDataRxModel(key, value, data, documentMeta) {
   const number = (d) => +d;
   const trim = (d) => d.trim();
-  const noop = (d) => d;
+  const noop2 = (d) => d;
   const mods = key.replace(rxModel, "").split(".").filter((d) => d).reduce((d, k) => {
     d[k] = true;
     return d;
   }, {});
   const field = "value";
   const event = mods.lazy ? "change" : "input";
-  const processor = mods.number ? number : mods.trim ? trim : noop;
+  const processor = mods.number ? number : mods.trim ? trim : noop2;
   data[field] = evalInContext(value, documentMeta);
   data.on = data.on || {};
   data.on[event] = (e) => documentMeta[value] = processor(e);
@@ -1649,17 +1654,17 @@ async function resolveContentComponents(body, meta2) {
     return components22;
   }
 }
-const _sfc_setup$5 = _sfc_main$5.setup;
-_sfc_main$5.setup = (props, ctx) => {
+const _sfc_setup$6 = _sfc_main$6.setup;
+_sfc_main$6.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/content/dist/runtime/components/ContentRendererMarkdown.vue");
-  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
 };
 const ContentRendererMarkdown = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: _sfc_main$5
+  default: _sfc_main$6
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$4 = defineComponent({
+const _sfc_main$5 = defineComponent({
   name: "ContentRenderer",
   props: {
     value: {
@@ -1703,7 +1708,7 @@ const _sfc_main$4 = defineComponent({
     }
     if (value && (value == null ? void 0 : value._type) === "markdown" && ((_b = (_a = value == null ? void 0 : value.body) == null ? void 0 : _a.children) == null ? void 0 : _b.length)) {
       return h(
-        _sfc_main$5,
+        _sfc_main$6,
         {
           value,
           excerpt,
@@ -1719,15 +1724,15 @@ const _sfc_main$4 = defineComponent({
     );
   }
 });
-const _sfc_setup$4 = _sfc_main$4.setup;
-_sfc_main$4.setup = (props, ctx) => {
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue");
-  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
 const ContentRenderer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: _sfc_main$4
+  default: _sfc_main$5
 }, Symbol.toStringTag, { value: "Module" }));
 const ensureArray = (value) => Array.isArray(value) ? value : value ? [value] : [];
 const arrayParams = ["sort", "where", "only", "without"];
@@ -1889,7 +1894,7 @@ function queryContent(query, ...pathParts) {
   }
   return createQuery(createQueryFetch(), query);
 }
-const _sfc_main$3 = defineComponent({
+const _sfc_main$4 = defineComponent({
   name: "ContentQuery",
   props: {
     path: {
@@ -2052,17 +2057,17 @@ const _sfc_main$3 = defineComponent({
     return emptyNode("default", { data, props, isPartial });
   }
 });
-const _sfc_setup$3 = _sfc_main$3.setup;
-_sfc_main$3.setup = (props, ctx) => {
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/content/dist/runtime/components/ContentQuery.vue");
-  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
 const ContentQuery = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: _sfc_main$3
+  default: _sfc_main$4
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$2 = defineComponent({
+const _sfc_main$3 = defineComponent({
   name: "ContentDoc",
   props: {
     tag: {
@@ -2096,7 +2101,7 @@ const _sfc_main$2 = defineComponent({
     const contentQueryProps = Object.assign(query || {}, { path, find: "one" });
     const emptyNode = (slot, data) => h("pre", null, JSON.stringify({ message: "You should use slots with <ContentDoc>", slot, data }, null, 2));
     return h(
-      _sfc_main$3,
+      _sfc_main$4,
       contentQueryProps,
       {
         default: (slots == null ? void 0 : slots.default) ? ({ data, refresh, isPartial }) => {
@@ -2110,7 +2115,7 @@ const _sfc_main$2 = defineComponent({
             useContentHead(data);
           }
           return h(
-            _sfc_main$4,
+            _sfc_main$5,
             { value: data, excerpt, tag, ...this.$attrs },
             { empty: (bindings) => (slots == null ? void 0 : slots.empty) ? slots.empty(bindings) : emptyNode("default", data) }
           );
@@ -2127,15 +2132,15 @@ const _sfc_main$2 = defineComponent({
     );
   }
 });
-const _sfc_setup$2 = _sfc_main$2.setup;
-_sfc_main$2.setup = (props, ctx) => {
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/content/dist/runtime/components/ContentDoc.vue");
-  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
 const ContentDoc = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: _sfc_main$2
+  default: _sfc_main$3
 }, Symbol.toStringTag, { value: "Module" }));
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
@@ -2144,38 +2149,446 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
+const meta$3 = void 0;
 const meta$2 = void 0;
-const meta$1 = void 0;
-const meta = {
+const isVue2 = false;
+/*!
+  * pinia v2.0.22
+  * (c) 2022 Eduardo San Martin Morote
+  * @license MIT
+  */
+let activePinia;
+const setActivePinia = (pinia) => activePinia = pinia;
+const piniaSymbol = Symbol();
+function isPlainObject(o) {
+  return o && typeof o === "object" && Object.prototype.toString.call(o) === "[object Object]" && typeof o.toJSON !== "function";
+}
+var MutationType;
+(function(MutationType2) {
+  MutationType2["direct"] = "direct";
+  MutationType2["patchObject"] = "patch object";
+  MutationType2["patchFunction"] = "patch function";
+})(MutationType || (MutationType = {}));
+function createPinia() {
+  const scope = effectScope(true);
+  const state = scope.run(() => ref({}));
+  let _p = [];
+  let toBeInstalled = [];
+  const pinia = markRaw({
+    install(app) {
+      setActivePinia(pinia);
+      {
+        pinia._a = app;
+        app.provide(piniaSymbol, pinia);
+        app.config.globalProperties.$pinia = pinia;
+        toBeInstalled.forEach((plugin) => _p.push(plugin));
+        toBeInstalled = [];
+      }
+    },
+    use(plugin) {
+      if (!this._a && !isVue2) {
+        toBeInstalled.push(plugin);
+      } else {
+        _p.push(plugin);
+      }
+      return this;
+    },
+    _p,
+    _a: null,
+    _e: scope,
+    _s: /* @__PURE__ */ new Map(),
+    state
+  });
+  return pinia;
+}
+const noop = () => {
+};
+function addSubscription(subscriptions, callback, detached, onCleanup = noop) {
+  subscriptions.push(callback);
+  const removeSubscription = () => {
+    const idx = subscriptions.indexOf(callback);
+    if (idx > -1) {
+      subscriptions.splice(idx, 1);
+      onCleanup();
+    }
+  };
+  if (!detached && getCurrentInstance()) {
+    onUnmounted(removeSubscription);
+  }
+  return removeSubscription;
+}
+function triggerSubscriptions(subscriptions, ...args) {
+  subscriptions.slice().forEach((callback) => {
+    callback(...args);
+  });
+}
+function mergeReactiveObjects(target, patchToApply) {
+  if (target instanceof Map && patchToApply instanceof Map) {
+    patchToApply.forEach((value, key) => target.set(key, value));
+  }
+  if (target instanceof Set && patchToApply instanceof Set) {
+    patchToApply.forEach(target.add, target);
+  }
+  for (const key in patchToApply) {
+    if (!patchToApply.hasOwnProperty(key))
+      continue;
+    const subPatch = patchToApply[key];
+    const targetValue = target[key];
+    if (isPlainObject(targetValue) && isPlainObject(subPatch) && target.hasOwnProperty(key) && !isRef(subPatch) && !isReactive(subPatch)) {
+      target[key] = mergeReactiveObjects(targetValue, subPatch);
+    } else {
+      target[key] = subPatch;
+    }
+  }
+  return target;
+}
+const skipHydrateSymbol = Symbol();
+function shouldHydrate(obj) {
+  return !isPlainObject(obj) || !obj.hasOwnProperty(skipHydrateSymbol);
+}
+const { assign } = Object;
+function isComputed(o) {
+  return !!(isRef(o) && o.effect);
+}
+function createOptionsStore(id, options, pinia, hot) {
+  const { state, actions, getters } = options;
+  const initialState = pinia.state.value[id];
+  let store;
+  function setup() {
+    if (!initialState && (!("production" !== "production") )) {
+      {
+        pinia.state.value[id] = state ? state() : {};
+      }
+    }
+    const localState = toRefs(pinia.state.value[id]);
+    return assign(localState, actions, Object.keys(getters || {}).reduce((computedGetters, name) => {
+      computedGetters[name] = markRaw(computed(() => {
+        setActivePinia(pinia);
+        const store2 = pinia._s.get(id);
+        return getters[name].call(store2, store2);
+      }));
+      return computedGetters;
+    }, {}));
+  }
+  store = createSetupStore(id, setup, options, pinia, hot, true);
+  store.$reset = function $reset() {
+    const newState = state ? state() : {};
+    this.$patch(($state) => {
+      assign($state, newState);
+    });
+  };
+  return store;
+}
+function createSetupStore($id, setup, options = {}, pinia, hot, isOptionsStore) {
+  let scope;
+  const optionsForPlugin = assign({ actions: {} }, options);
+  const $subscribeOptions = {
+    deep: true
+  };
+  let isListening;
+  let isSyncListening;
+  let subscriptions = markRaw([]);
+  let actionSubscriptions = markRaw([]);
+  let debuggerEvents;
+  const initialState = pinia.state.value[$id];
+  if (!isOptionsStore && !initialState && (!("production" !== "production") )) {
+    {
+      pinia.state.value[$id] = {};
+    }
+  }
+  ref({});
+  let activeListener;
+  function $patch(partialStateOrMutator) {
+    let subscriptionMutation;
+    isListening = isSyncListening = false;
+    if (typeof partialStateOrMutator === "function") {
+      partialStateOrMutator(pinia.state.value[$id]);
+      subscriptionMutation = {
+        type: MutationType.patchFunction,
+        storeId: $id,
+        events: debuggerEvents
+      };
+    } else {
+      mergeReactiveObjects(pinia.state.value[$id], partialStateOrMutator);
+      subscriptionMutation = {
+        type: MutationType.patchObject,
+        payload: partialStateOrMutator,
+        storeId: $id,
+        events: debuggerEvents
+      };
+    }
+    const myListenerId = activeListener = Symbol();
+    nextTick().then(() => {
+      if (activeListener === myListenerId) {
+        isListening = true;
+      }
+    });
+    isSyncListening = true;
+    triggerSubscriptions(subscriptions, subscriptionMutation, pinia.state.value[$id]);
+  }
+  const $reset = noop;
+  function $dispose() {
+    scope.stop();
+    subscriptions = [];
+    actionSubscriptions = [];
+    pinia._s.delete($id);
+  }
+  function wrapAction(name, action) {
+    return function() {
+      setActivePinia(pinia);
+      const args = Array.from(arguments);
+      const afterCallbackList = [];
+      const onErrorCallbackList = [];
+      function after(callback) {
+        afterCallbackList.push(callback);
+      }
+      function onError(callback) {
+        onErrorCallbackList.push(callback);
+      }
+      triggerSubscriptions(actionSubscriptions, {
+        args,
+        name,
+        store,
+        after,
+        onError
+      });
+      let ret;
+      try {
+        ret = action.apply(this && this.$id === $id ? this : store, args);
+      } catch (error) {
+        triggerSubscriptions(onErrorCallbackList, error);
+        throw error;
+      }
+      if (ret instanceof Promise) {
+        return ret.then((value) => {
+          triggerSubscriptions(afterCallbackList, value);
+          return value;
+        }).catch((error) => {
+          triggerSubscriptions(onErrorCallbackList, error);
+          return Promise.reject(error);
+        });
+      }
+      triggerSubscriptions(afterCallbackList, ret);
+      return ret;
+    };
+  }
+  const partialStore = {
+    _p: pinia,
+    $id,
+    $onAction: addSubscription.bind(null, actionSubscriptions),
+    $patch,
+    $reset,
+    $subscribe(callback, options2 = {}) {
+      const removeSubscription = addSubscription(subscriptions, callback, options2.detached, () => stopWatcher());
+      const stopWatcher = scope.run(() => watch(() => pinia.state.value[$id], (state) => {
+        if (options2.flush === "sync" ? isSyncListening : isListening) {
+          callback({
+            storeId: $id,
+            type: MutationType.direct,
+            events: debuggerEvents
+          }, state);
+        }
+      }, assign({}, $subscribeOptions, options2)));
+      return removeSubscription;
+    },
+    $dispose
+  };
+  const store = reactive(assign(
+    {},
+    partialStore
+  ));
+  pinia._s.set($id, store);
+  const setupStore = pinia._e.run(() => {
+    scope = effectScope();
+    return scope.run(() => setup());
+  });
+  for (const key in setupStore) {
+    const prop = setupStore[key];
+    if (isRef(prop) && !isComputed(prop) || isReactive(prop)) {
+      if (!isOptionsStore) {
+        if (initialState && shouldHydrate(prop)) {
+          if (isRef(prop)) {
+            prop.value = initialState[key];
+          } else {
+            mergeReactiveObjects(prop, initialState[key]);
+          }
+        }
+        {
+          pinia.state.value[$id][key] = prop;
+        }
+      }
+    } else if (typeof prop === "function") {
+      const actionValue = wrapAction(key, prop);
+      {
+        setupStore[key] = actionValue;
+      }
+      optionsForPlugin.actions[key] = prop;
+    } else ;
+  }
+  {
+    assign(store, setupStore);
+    assign(toRaw(store), setupStore);
+  }
+  Object.defineProperty(store, "$state", {
+    get: () => pinia.state.value[$id],
+    set: (state) => {
+      $patch(($state) => {
+        assign($state, state);
+      });
+    }
+  });
+  pinia._p.forEach((extender) => {
+    {
+      assign(store, scope.run(() => extender({
+        store,
+        app: pinia._a,
+        pinia,
+        options: optionsForPlugin
+      })));
+    }
+  });
+  if (initialState && isOptionsStore && options.hydrate) {
+    options.hydrate(store.$state, initialState);
+  }
+  isListening = true;
+  isSyncListening = true;
+  return store;
+}
+function defineStore(idOrOptions, setup, setupOptions) {
+  let id;
+  let options;
+  const isSetupStore = typeof setup === "function";
+  if (typeof idOrOptions === "string") {
+    id = idOrOptions;
+    options = isSetupStore ? setupOptions : setup;
+  } else {
+    options = idOrOptions;
+    id = idOrOptions.id;
+  }
+  function useStore(pinia, hot) {
+    const currentInstance = getCurrentInstance();
+    pinia = (pinia) || currentInstance && inject(piniaSymbol);
+    if (pinia)
+      setActivePinia(pinia);
+    pinia = activePinia;
+    if (!pinia._s.has(id)) {
+      if (isSetupStore) {
+        createSetupStore(id, setup, options, pinia);
+      } else {
+        createOptionsStore(id, options, pinia);
+      }
+    }
+    const store = pinia._s.get(id);
+    return store;
+  }
+  useStore.$id = id;
+  return useStore;
+}
+const useToggleStore = defineStore("toggle", {
+  state: () => ({
+    toggle: false
+  }),
+  getters: {
+    getToggle: (state) => state.toggle
+  },
+  actions: {
+    setToggle(payload) {
+      this.toggle = payload;
+    }
+  }
+});
+const meta$1 = {
   layout: "project"
 };
+const _sfc_main$2 = {
+  __name: "AppCard",
+  __ssrInlineRender: true,
+  props: {
+    project: {
+      type: Object
+    }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_nuxt_link = __nuxt_component_0$1;
+      _push(ssrRenderComponent(_component_nuxt_link, mergeProps({
+        to: __props.project._path
+      }, _attrs), {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<div class="${ssrRenderClass([[__props.project.category], "card"])}"${_scopeId}><div class="card__image"${_scopeId}><img${ssrRenderAttr("src", `/assets/images/${__props.project.heroimage}`)} class="cover" alt="image hero"${_scopeId}></div><div class="card__texts"${_scopeId}><h3${_scopeId}>${ssrInterpolate(__props.project.head.title)}</h3><p${_scopeId}>${ssrInterpolate(__props.project.head.description)}</p></div></div>`);
+          } else {
+            return [
+              createVNode("div", {
+                class: ["card", [__props.project.category]]
+              }, [
+                createVNode("div", { class: "card__image" }, [
+                  createVNode("img", {
+                    src: `/assets/images/${__props.project.heroimage}`,
+                    class: "cover",
+                    alt: "image hero"
+                  }, null, 8, ["src"])
+                ]),
+                createVNode("div", { class: "card__texts" }, [
+                  createVNode("h3", null, toDisplayString(__props.project.head.title), 1),
+                  createVNode("p", null, toDisplayString(__props.project.head.description), 1)
+                ])
+              ], 2)
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+    };
+  }
+};
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/AppCard.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const AppCard = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: _sfc_main$2
+}, Symbol.toStringTag, { value: "Module" }));
+const meta = void 0;
 const routes = [
   {
     name: "slug",
     path: "/:slug(.*)*",
     file: "/Users/fanny/DEV/MyPortfolio/pages/[...slug].vue",
     children: [],
-    meta: meta$2,
+    meta: meta$3,
     alias: [],
-    component: () => import('./_nuxt/_...slug_.5cc9223b.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_...slug_.0ad8fa93.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
     path: "/",
     file: "/Users/fanny/DEV/MyPortfolio/pages/index.vue",
     children: [],
-    meta: meta$1,
+    meta: meta$2,
     alias: [],
-    component: () => import('./_nuxt/index.88bcef6b.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index.927cee48.mjs').then((m) => m.default || m)
   },
   {
     name: "projects-slug",
     path: "/projects/:slug(.*)*",
     file: "/Users/fanny/DEV/MyPortfolio/pages/projects/[...slug].vue",
     children: [],
+    meta: meta$1,
+    alias: (meta$1 == null ? void 0 : meta$1.alias) || [],
+    component: () => import('./_nuxt/_...slug_.a17e21cc.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "projects",
+    path: "/projects",
+    file: "/Users/fanny/DEV/MyPortfolio/pages/projects/index.vue",
+    children: [],
     meta,
-    alias: (meta == null ? void 0 : meta.alias) || [],
-    component: () => import('./_nuxt/_...slug_.64eabdcc.mjs').then((m) => m.default || m)
+    alias: [],
+    component: () => import('./_nuxt/index.c6df0fe2.mjs').then((m) => m.default || m)
   }
 ];
 const configRouterOptions = {};
@@ -2309,6 +2722,19 @@ const node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB = defineNuxtPlu
   });
   return { provide: { router } };
 });
+const node_modules__64pinia_nuxt_dist_runtime_plugin_vue3_mjs_A0OWXRrUgq = defineNuxtPlugin((nuxtApp) => {
+  const pinia = createPinia();
+  nuxtApp.vueApp.use(pinia);
+  setActivePinia(pinia);
+  {
+    nuxtApp.payload.pinia = pinia.state.value;
+  }
+  return {
+    provide: {
+      pinia
+    }
+  };
+});
 const node_modules__64nuxt_content_dist_runtime_plugins_ws_mjs_JuoSZH52OQ = defineNuxtPlugin(() => {
   useRuntimeConfig().public;
 });
@@ -2318,13 +2744,14 @@ const _plugins = [
   node_modules_nuxt_dist_head_runtime_lib_vueuse_head_plugin_mjs_D7WGfuP1A0,
   node_modules_nuxt_dist_head_runtime_plugin_mjs_1QO0gqa6n2,
   node_modules_nuxt_dist_pages_runtime_router_mjs_qNv5Ky2ZmB,
+  node_modules__64pinia_nuxt_dist_runtime_plugin_vue3_mjs_A0OWXRrUgq,
   node_modules__64nuxt_content_dist_runtime_plugins_ws_mjs_JuoSZH52OQ
 ];
 const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.c82b551c.mjs'));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.8b99409c.mjs'));
     const nuxtApp = useNuxtApp();
     provide("_route", useRoute());
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");
@@ -2357,8 +2784,8 @@ _sfc_main$1.setup = (props, ctx) => {
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
 const layouts = {
-  default: defineAsyncComponent(() => import('./_nuxt/default.2a934afa.mjs')),
-  project: defineAsyncComponent(() => import('./_nuxt/project.af97de36.mjs'))
+  default: defineAsyncComponent(() => import('./_nuxt/default.fbac578b.mjs')),
+  project: defineAsyncComponent(() => import('./_nuxt/project.be448c19.mjs'))
 };
 const __nuxt_component_0 = defineComponent({
   props: {
@@ -2386,12 +2813,19 @@ const layout = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: __nuxt_component_0
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main = {};
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+const _sfc_main = {
+  head() {
+    return {
+      bodyAttrs: {
+        class: "reset-body"
+      }
+    };
+  }
+};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_NuxtLayout = __nuxt_component_0;
   const _component_NuxtPage = resolveComponent("NuxtPage");
-  _push(`<div${ssrRenderAttrs(_attrs)}>`);
-  _push(ssrRenderComponent(_component_NuxtLayout, null, {
+  _push(ssrRenderComponent(_component_NuxtLayout, _attrs, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
         _push2(ssrRenderComponent(_component_NuxtPage, null, null, _parent2, _scopeId));
@@ -2403,7 +2837,6 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     }),
     _: 1
   }, _parent));
-  _push(`</div>`);
 }
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
@@ -2436,5 +2869,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { ContentRendererMarkdown as C, _sfc_main$3 as _, addPrerenderPath as a, _export_sfc as b, useHead as c, useNuxtApp as d, entry$1 as default, useState as e, useContentDisabled as f, useAsyncData as g, __nuxt_component_0$1 as h, useUnwrap as i, jsonStringify as j, _sfc_main$2 as k, ContentRenderer as l, ContentQuery as m, nuxtLink as n, ContentDoc as o, layout as p, useCookie as u, withContentBase as w };
+export { AppCard as A, ContentRendererMarkdown as C, _export_sfc as _, _sfc_main$4 as a, addPrerenderPath as b, useHead as c, useNuxtApp as d, entry$1 as default, useState as e, useContentDisabled as f, useAsyncData as g, __nuxt_component_0$1 as h, useToggleStore as i, jsonStringify as j, useUnwrap as k, _sfc_main$3 as l, useContentHead as m, _sfc_main$5 as n, _sfc_main$2 as o, nuxtLink as p, queryContent as q, ContentRenderer as r, ContentQuery as s, ContentDoc as t, useCookie as u, layout as v, withContentBase as w };
 //# sourceMappingURL=server.mjs.map

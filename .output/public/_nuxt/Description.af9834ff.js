@@ -1,0 +1,1 @@
+import{a as s,o as t,b as o,r,e as c}from"./entry.6ab8f26f.js";const n={},a={class:"project__description"},_=c("h3",null,"here the description",-1);function i(e,d){return t(),o("div",a,[_,r(e.$slots,"default")])}const p=s(n,[["render",i]]);export{p as default};

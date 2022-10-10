@@ -1,11 +1,11 @@
 <template>
-    <div class="circles h-screen md:h-2/6  fixed min-w-full">
+    <div class="circles  md:h-2/6  fixed min-w-full">
     <div class="circle research bg-violet-800 "></div>
     <div class="circle design bg-orange-500"></div>
   </div>
 </template>
-<style lang="scss" scoped>
 
+<style lang="scss" scoped>
 
 .circles {
   top: 0;
@@ -46,6 +46,7 @@
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 }
+
 
 @keyframes float {
   0%   { transform: translateX( calc( 240px * 0.0 ) ) translateZ( 0 ) }

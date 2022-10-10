@@ -1,1 +1,0 @@
-import{C as t,o as e,p as s,D as a}from"./entry.e30de954.js";const r={name:"LayoutProject"},c={class:"layout layout--project"};function n(o,p,l,_,d,u){return e(),s("div",c,[a(o.$slots,"default")])}const i=t(r,[["render",n]]);export{i as default};

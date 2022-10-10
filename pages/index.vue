@@ -47,13 +47,13 @@
     </div>
     <div class="navigation p-5 text-center flex justify-center lg:justify-end">
       <ul class="grid grid-cols-1">
-        <!-- <li class="flex justify-center items-center">
+        <li class="flex justify-center items-center">
           <nuxt-link to="/projects">
             <div class="button button--hero bg-violet-800 text-slate-200 m-2 transform transition duration-500 hover:scale-105">
               <span class="text-3xl font-normal">Projects</span>
             </div>
           </nuxt-link>
-        </li> -->
+        </li>
         <li class="flex justify-center items-center">
           <nuxt-link
             to="https://www.linkedin.com/in/fanny-nhouyvanisvong-design/"

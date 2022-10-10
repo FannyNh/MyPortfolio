@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fiche description amazon</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style type="text/css">
+       * {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+
+        tbody {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            width: 1000px !important;
+            height: 400px;
+        }
+
+        .flex-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+        }
+
+        .flex-column {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+
+        }
+
+        /* table,
+        tr,
+        td,
+        thead,
+        tbody {
+            display: block !important;
+        } */
+
+        .section,
+        .section__content,
+        .separator {
+            width: 960px !important;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .separator {
+            background-color: #FDBF00;
+            height: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .section__content--phase1 {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            width: 400px !important;
+            height: 500px !important;
+        }
+
+        .title__phase {
+            width: 100%;
+            text-align: center;
+            font-family: 'Roboto Slab', serif;
+            text-transform: uppercase;
+            font-size: 25px;
+            color: #34495E;
+        }
+
+        .title__phase__no_upp {
+            width: 100%;
+            text-align: center;
+            font-family: 'Roboto Slab', serif;
+            font-size: 25px;
+            color: #34495E;
+        }
+
+        .title__phase--mid {
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            padding-top: 12px;
+            font-family: 'Roboto Slab', serif;
+            text-transform: uppercase;
+            background-color: #34495E;
+            border-radius: 10px;
+            width: 226px;
+            height: 50px;
+        }
+
+        .text-content {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12px;
+        }
+
+        .phase1-col {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+        }
+
+
+        .phase1__textcontent {
+            text-align: center;
+            padding: 0px 20px 0px;
+            height: 200px;
+            background-color: #34495E;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .phase1__textcontent h3 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 18px;
+            -webkit-box-shadow: 3px 7px 2em #20202027;
+                    box-shadow: 3px 7px 2em #20202027;
+        }
+
+        .phase1__imgcontent {
+            text-align: center;
+            height: 170px;
+            background-color: white;
+            border-radius: 20px;
+            -webkit-box-shadow: 3px 7px 2em #20202027;
+                    box-shadow: 3px 7px 2em #20202027;
+        }
+
+        .phase3__imgcontent {
+            text-align: center;
+            height: 395px;
+            width: 445px;
+            border-radius: 20px;
+            -webkit-box-shadow: 3px 7px 2em #20202027;
+                    box-shadow: 3px 7px 2em #20202027;
+            /* background-color: #d9ffd9;
+            background-image: url("./Compobadge+pack.jpg"); */
+        }
+
+        .phase1__imgcontent img {
+            width: 90%;
+        }
+        .phase3__imgcontent img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+
+
+        .phase2__text {
+            background-color: #F3F4F8;
+            border-radius: 20px;
+            height: 2540px;
+        }
+
+        .phase2__text__content td {
+            height: 535px;
+            width: 230px;
+            padding-top: 100px;
+            padding-left: 10px;
+        }
+
+        .phase2__text__content td p {
+            color: #34495E;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 14px;
+        }
+
+        .phase2__text__content td p strong {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .phase2__text__img td {
+            padding-left: 15px;
+            height: 2240px
+        }
+
+        .phase2__img {
+            height: 2540px;
+        }
+
+        .phase2__img table tr td {
+            margin-left: 10px;
+            background-color: #F3F4F8;
+            border-radius: 20px;
+            width: 400px;
+            margin-bottom: 10px;
+            height: 500px;
+        }
+
+        .phase2__img table tr td img {
+            border-radius: 20px;
+        }
+
+        /* .section__content--phase1 {
+            float: left !important;
+            width: 50% !important;
+        } */
+
+        .phase3-col {
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+            background-color: #F3F4F8;
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 30px;
+            -webkit-box-shadow: 3px 7px 7px #20202027;
+                    box-shadow: 3px 7px 7px #20202027;
+
+        }
+
+        .phase3__textcontent {
+            text-align: center;
+            padding: 35px 10px 0px;
+            height: 200px;
+            width: 455px;
+            color: #34495E;
+            border-radius: 20px;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .phase3__textcontent h4 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        phase3__price {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .price1 {
+            font-size: 6em;
+        }
+
+        .price2 {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="section" id="header__hero" style="width: 1000px; height: 400px;">
+        <tr style="width: 1000px; height: 400px;">
+            <td style="width: 1000px; height: 400px;">
+                <img style="width: 100%; height: 100%;" src="./header-vf.jpg" alt="header badge ulys">
+            </td>
+
+        </tr>
+    </table>
+    <table class="section">
+        <tr>
+            <td class="title__phase">
+                <h2>
+                    Les avantages du badge télépéage
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="phase1-col">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="table-left "
+                    style="display: inline-block;" width="400" height="400">
+                    <tr>
+                        <td class="phase1__textcontent" valign="top">
+                            <h3>Gagnez du temps <br>
+                                sur tous<br>
+                                vos trajets</h3>
+                            <p class="text-content"> Grâce aux voies à 30km/h<br>
+                                ne faites plus la queue au péage
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="phase1__imgcontent">
+                            <img src="./345x150-savetime-v2.jpg" alt="icon ulys unlock">
+                        </td>
+                    </tr>
+                </table>
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="table-left "
+                    style="display: inline-block;" width="400" height="400">
+                    <tr>
+                        <td class="phase1__textcontent" valign="top">
+                            <h3>Des offres<br>
+                                sans engagement<br>
+                                ni coûts cachés</h3>
+                            <p class="text-content"> Pas d’engagement de durée<br>
+                                et pas de frais d’activation<br>
+                                ni de dépôt de garantie</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="phase1__imgcontent">
+                            <img src="./345x150-cout-bis.jpg" alt="icon ulys unlock">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="phase1-col">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="table-left "
+                    style="display: inline-block;" width="400" height="400">
+                    <tr>
+                        <td class="phase1__textcontent" valign="top">
+                            <h3>Une application <br>
+                                mobile qui <br>
+                                vous accompagne</h3>
+                            <p class="text-content">Consultation des <br>
+                                consommations, info-trafic, <br>
+                                guide des aires de services, GPS, <br>
+                                prix du péage à l’avance …
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="phase1__imgcontent">
+                            <img src="./345x150-mobile-v2.jpg" alt="icon ulys unlock">
+                        </td>
+                    </tr>
+                </table>
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="table-left "
+                    style="display: inline-block;" width="400" height="400">
+                    <tr>
+                        <td class="phase1__textcontent" valign="top">
+                            <h3>Accessible en France, en <br> Espagne, au Portugal <br>
+                                et dans +400 parkings</h3>
+                            <p class="text-content"> Compatible avec toutes <br>
+                                les autoroutes de France, <br>
+                                d’Espagne et du Portugal, compatible <br>
+                                avec + de 400 parkings en France</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="phase1__imgcontent">
+                            <img src="./345x150-pays-v2.jpg" alt="icon ulys unlock">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+
+    </table>
+    <table class="separator">
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    <table class="section">
+        <tr>
+            <td class="title__phase">
+                <h2>
+                    Guide d’activation du badge
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="
+            display: flex;
+            justify-content: center;
+            margin-top: -30px;
+        ">
+                <h3 class="title__phase--mid">ACTIVATION EN 2MIN</h3>
+            </td>
+        </tr>
+        <tr class="flex-row" style="justify-content: center;">
+            <td class=" flex-row phase2__text">
+                <table>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr class="phase2__text__img">
+                                    <td><img style="height: 100%;" src="./timeline.png" alt="img timeline ulys badge">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr class="flex-column phase2__text__content">
+                        <td>
+                            <p><strong>Achat
+                                </strong><br>badge télépéage sur Amazon</p>
+                        </td>
+                        <td>
+                            <p><strong>Téléchargement
+                                </strong><br>de l’application Ulys<br>
+                                sur Google Play Store ou App Store </p>
+                        </td>
+                        <td>
+                            <p><strong>Création
+                                </strong><br>du compte client<br>
+                                sur l’application Ulys</p>
+                        </td>
+                        <td>
+                            <p><strong>Activation
+                                </strong><br>du badge télépéage <br>
+                                sur l’application Ulys</p>
+                        </td>
+                        <td>
+                            <p><strong>Mise en place<br>
+                                    du badge dans le<br> véhicule pour une<br> utilisation immédiate
+                                </strong><br></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="phase2__img ">
+                <table>
+                    <tr class="flex-column">
+                        <td><img src="./achat-badge.jpg" alt=""></td>
+                        <td><img src="./telechargement-app-400x500-bis.jpg" alt=""></td>
+                        <td><img src="./create-client-account-400x500.jpg" alt=""></td>
+                        <td><img src="./activation-badge-400x500.jpg" alt=""></td>
+                        <td><img src="./mise-en-place-400x500.jpg" alt=""></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table class="separator">
+        <tr>
+            <td></td>
+        </tr>
+
+    </table>
+    <table class="section">
+        <tr>
+            <td class="title__phase__no_upp">
+                <h2>
+                    Avec Ulys, payez uniquement lorsque vous empruntez l’autoroute
+                </h2>
+            </td>
+        </tr>
+        <tr class="phase3-col flex-row">
+            <td>
+                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="font-weight: bold; padding-bottom: 20px;" class="title__phase">
+                            L’ ABONNEMENT ULYS</td>
+                    </tr>
+                </table>
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="table-left "
+                    style="display: inline-block;" width="455" height="400">
+                    <tr>
+                        <td class="phase3__textcontent" valign="top">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0"  class="phase3__price">
+                                <tbody>
+                                    <tr>
+                                        <td class="flex-row">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="price1"><strong>2</strong></td>
+                                                </tr>
+                                            </table>
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                                <tr class="flex-column">
+                                                    <td class="price2">,OO€</td>
+                                                    <td><span>/mois utilisé</span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- <td><strong>2</strong></td>
+                                        <td  class="flex-column">
+                                            <tr>
+                                                <td>,OO€</td>
+                                                <td><span>/mois utilisé</span></td>
+                                            </tr>
+                                        </td> -->
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                            <h4> + Prix du péage & parking</h4>
+                            <p class="text-content" style="font-size: 18px;">
+                                <strong style="font-size: 25px;">0€</strong> les mois où vous<br>
+                                n’utilisez pas votre badge
+
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="table-left "
+                    style="display: inline-block;" width="455" height="400">
+                    <tr>
+                        <td class="phase3__imgcontent">
+                            <img src="./Compobadge+pack.jpg" alt="badeg ulys ">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+
+
+
+    </table>
+</body>
+
+</html>

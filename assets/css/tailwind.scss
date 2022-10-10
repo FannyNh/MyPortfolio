@@ -1,0 +1,57 @@
+@tailwind base;
+:root {
+    --primary: #7c3aed;
+    --secondary: #ede9fe;
+  }
+* {
+    scrollbar-width: thin;
+    scrollbar-color: transparent var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+    display: none;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 14px;
+    border: 3px solid var(--secondary);
+}
+@media (min-width: 768px){
+    *::-webkit-scrollbar {
+        display: block;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,100;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,700;1,100;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,200;0,300;0,400;0,700;1,100;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&family=Raleway:ital,wght@0,200;0,300;0,400;0,700;0,900;1,100;1,500&display=swap");
+
+h1,
+h2,
+h3 {
+    font-family: "Montserrat" !important;
+}
+div,
+span,
+p,
+b,
+strong,
+i,
+ul,
+li,
+a {
+    font-family: "Roboto" !important;
+}
+/* Handle */

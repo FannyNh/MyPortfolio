@@ -2,7 +2,14 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+      },
+
+    },
   },
   plugins: [],
 }
