@@ -11,7 +11,7 @@ defineProps({
     <div class="card__image">
       <img
         :src="`/images/${project.heroimage}`"
-        class="cover"
+        class="object-cover"
         alt="image hero"
       />
     </div>
@@ -46,6 +46,7 @@ defineProps({
     height: 210px;
     img{
       height: 100%;
+      width: 100%;
       margin: 0 auto;
     }
   }

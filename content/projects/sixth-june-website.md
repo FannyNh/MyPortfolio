@@ -1,7 +1,7 @@
 ---
 head:
     title: Sixth June Developement & Design
-    description: Creative Developper. Crafting websites with strong impact. Design and develope visual interface. To create solid responsive components and create a modular template page system.
+    description: Front-End / Design. Crafting websites with strong impact.
 
     technologies: 
         - HTML
@@ -18,8 +18,15 @@ images:
 id: 14
 draft: false
 category: tech
-heroimage: "projects/sixthjune-site/hero.jpg"
+heroimage: "projects/sixthjune-site/hero.jpeg"
 ---
+::blockText
+---
+title: "Details"
+subtitle: Front-End / Design 
+textContent: "Creative Developper. Crafting websites with strong impact. Design and develope visual interface. To create solid responsive components and create a modular template page system."
+---
+::
 ::blockText
 ---
 title: descriptif of the jobs
@@ -41,6 +48,12 @@ tagList: [{id:4, name: "Javascript", color: "purple"},{id:8, name: "BOOTSTRAP", 
 ::slider
 ---
 images: [{id:1,src : "projects/sixthjune-site/solde_1.jpg",alt : "retouching"},{id:2, src : "projects/sixthjune-site/solde_2.jpg",alt : "retouching 2"},{id:3, src : "projects/sixthjune-site/solde_3.jpg",alt : "retouching 3"},{id:4, src : "projects/sixthjune-site/solde_4.jpg",alt : "retouching 4"}]
+title: Mockup
+---
+::
+::slider
+---
+images: [{id:1,src : "projects/sixthjune-site/slide_6.png",alt : "retouching"},{id:2, src : "projects/sixthjune-site/slide_7.png",alt : "retouching 2"},{id:3, src : "projects/sixthjune-site/slide_8.png",alt : "retouching 3"}]
 title: Mockup
 ---
 ::

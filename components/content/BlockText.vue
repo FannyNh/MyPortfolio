@@ -24,7 +24,7 @@ defineProps({
       grid--sidelist
     "
   > -->
-  <div class="flex flex-wrap blockText">
+  <div class="flex flex-wrap blockText my-5">
  
     <h3 class="blockText__title">
       {{ title }}

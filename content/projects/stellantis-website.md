@@ -18,11 +18,11 @@ images:
 id: 14
 draft: false
 category: tech
-heroimage: "projects/stellantis/MicrosoftTeams-image-46.jpeg"
+heroimage: "projects/stellantis/hero.jpeg"
 ---
 ::slider
 ---
-images: [{id:1,src : "projects/stellantis/hero.jpeg",alt : "retouching"}]
+images: [{id:1,src : "projects/stellantis/MicrosoftTeams-image-46.jpeg",alt : "retouching"}]
 title: Mockup
 ---
 ::

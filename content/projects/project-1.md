@@ -46,5 +46,11 @@ images: [{id:1,src : "projects/project-1/Sixthjune_2017_1.jpeg",alt : "retouchin
 title: tittle image.
 ---
 ::
+::slider
+---
+images: [{id:1,src : "projects/project-1/sixth-june-fw17-shooting-cameron-paris.jpg",alt : "retouching"},{id:2, src : "projects/project-1/sixth-june-fw17-shooting-cameron-paris-2.jpg",alt : "retouching 2"},{id:3, src : "projects/project-1/sixth-june-fw17-shooting-cameron-paris-3.jpg",alt : "retouching 3"},{id:4, src : "projects/project-1/sixth-june-fw17-shooting-cameron-paris-4.jpg",alt : "retouching 3"},{id:5, src : "projects/project-1/sixth-june-fw17-shooting-cameron-paris-6.jpg",alt : "retouching 3"}]
+title: tittle image.
+---
+::
 
 

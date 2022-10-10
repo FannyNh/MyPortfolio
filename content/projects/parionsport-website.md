@@ -18,7 +18,7 @@ images:
 id: 14
 draft: false
 category: tech
-heroimage: "projects/PARIONSPORTmockup/300x250.jpg"
+heroimage: "projects/PARIONSPORTmockup/hero.jpeg"
 ---
 
 ::blockText
