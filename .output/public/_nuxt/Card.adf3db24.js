@@ -1,1 +1,0 @@
-import{a as t,o,b as r,e as a,r as s}from"./entry.6ab8f26f.js";const c={},n={class:"project__card"};function l(e,d){return o(),r("div",n,[a("h3",null,[s(e.$slots,"title")]),s(e.$slots,"default")])}const f=t(c,[["render",l]]);export{f as default};

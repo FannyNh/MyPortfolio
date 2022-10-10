@@ -1,1 +1,0 @@
-import{a as e,o as t,c as n,w as s,r,a4 as o}from"./entry.6ab8f26f.js";const i={};function c(a,_,d,l,f,m){return t(),n(o,{"enter-active-class":"animate__animated animate__fadeIn","leave-active-class":"animate__animated animate__fadeOut",duration:{enter:1e3,leave:500}},{default:s(()=>[r(a.$slots,"default")]),_:3})}const u=e(i,[["render",c]]);export{u as default};

@@ -10,7 +10,7 @@ defineProps({
     <div class="card" :class="[project.category]">
     <div class="card__image">
       <img
-        :src="`/assets/images/${project.heroimage}`"
+        :src="`/images/${project.heroimage}`"
         class="cover"
         alt="image hero"
       />
@@ -45,7 +45,8 @@ defineProps({
     @apply w-full ;
     height: 210px;
     img{
-      height: 100%
+      height: 100%;
+      margin: 0 auto;
     }
   }
   &__texts {

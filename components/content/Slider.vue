@@ -2,7 +2,7 @@
 <template>
   <Splide  :options="options" aria-label="My Favorite Images" class="slider">
     <SplideSlide v-for="image of images" :key="image.id">
-      <img :src="`/assets/images/${image.src}`" :alt="image.alt">
+      <img :src="`/images/${image.src}`" :alt="image.alt">
     </SplideSlide>
   </Splide>
 </template>
