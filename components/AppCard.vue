@@ -25,10 +25,10 @@ defineProps({
 </template>
 <style lang="scss">
 .card__wrapper{
-  @apply flex justify-center;
+  @apply flex justify-center w-full md:w-96 h-96;
 }
 .card {
-  @apply w-5/6 md:w-96 h-96 m-2 md:m-4 bg-white rounded-md shadow-md border  overflow-hidden transform transition duration-1000 hover:scale-105;
+  @apply w-full m-2 md:m-4 bg-white rounded-md shadow-md border  overflow-hidden transform transition duration-1000 hover:scale-105;
   &.design{
     @apply border-purple-600;
     h3 {
@@ -51,9 +51,9 @@ defineProps({
     }
   }
   &__texts {
-    @apply w-full p-3;
+    @apply text-center w-full p-3;
     p {
-      @apply text-slate-600 font-light;
+      @apply text-left text-slate-600 font-light;
     }
   }
 }

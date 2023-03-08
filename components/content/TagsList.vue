@@ -56,9 +56,7 @@ defineProps({
   &__tag {
     width: fit-content;
     height: 35px;
-    line-height: 35px !important;
-    display: block;
-    @apply m-2 px-3 rounded-full text-sm font-light font-mono;
+    @apply flex items-center m-2 px-3 rounded-full text-sm font-light font-mono;
     &--green {
       @apply bg-green-100 text-green-700;
     }
