@@ -1,0 +1,14 @@
+{
+    "welcome":"Salut",
+    "home":{
+        "profil":{
+            "message": "Développeur Front end expérimenté J'ai travaillé pour : AIRFRANCE, STELLANTIS, RENAULT et SHOWROOM PRIVE, et pour des start-ups : ADventori, TeamInside et LOGOTEL.",
+            "cta": "contactez-moi",
+            "job": "Développeuse Front-End / Designer"
+        },
+        "navigation":{
+            "home":"Accueil",
+            "resume":"CV"
+        }
+    }
+}

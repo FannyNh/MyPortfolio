@@ -20,12 +20,6 @@ draft: false
 category: tech
 heroimage: "projects/stellantis/hero.jpeg"
 ---
-::slider
----
-images: [{id:1,src : "projects/stellantis/MicrosoftTeams-image-46.jpeg",alt : "retouching"}]
-title: Mockup
----
-::
 ::blockText
 ---
 title: descriptif of the jobs
@@ -44,6 +38,12 @@ textContent: "
 ---
 title: list of the technologies
 tagList: [{id:4, name: "ES6", color: "purple"},{id:8, name: "BOOTSTRAPVue", color: "purple"},{id:5, name: "VUEJS", color: "purple"},{id:7, name: "NUXT JS", color: "purple"},{id:17, name: "VUEX", color: "purple"},{id:6, name: "CSS3/SASS", color: "purple"},{id:10, name: "AXIOS", color: "purple"},{id:13, name: "APIs", color: "purple"},{id:14, name: "Bitbucket", color: "purple"},{id:12, name: "Sftp", color: "red"},{id:11, name: "Git", color: "red"},{id:1, name: "Firebase", color: "red"},{id:9, name: "Bitbucket", color: "red"}, {id:2, name: "Photoshop", color: "green"}, {id:3, name: "Adobe xd", color: "green"},{id:4, name: "Trello", color: "default"},{id:4, name: "Kanban", color: "default"}]
+---
+::
+::slider
+---
+images: [{id:1,src : "projects/stellantis/MicrosoftTeams-image-46.jpeg",alt : "retouching"}]
+title: Mockup
 ---
 ::
 ::slider

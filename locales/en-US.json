@@ -1,0 +1,14 @@
+{
+    "welcome":"Hello",
+    "home":{
+        "profil":{
+            "message": "Experimented Front end Developer I worked for : AIRFRANCE, STELLANTIS,RENAULT and SHOWROOM PRIVE, and for start-ups : ADventori, TeamInside and LOGOTEL",
+            "cta": "Message me",
+            "job": "FrontEnd Developer / Designer"
+        },
+        "navigation":{
+            "home":"Home",
+            "resume":"Resume"
+        }
+    }
+}

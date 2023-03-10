@@ -33,13 +33,13 @@
 </script>
 <style>
   .slider {
-    @apply my-5;
-    height: 600px;
+    @apply my-5 lg:my-12;
+    height: auto;
   }
   .splide__slide {
     background: #f1f5f9
 ;
-    height: 600px !important;
+    height:fit-content !important;
   }
   .splide__slide img {
     width: 100%;

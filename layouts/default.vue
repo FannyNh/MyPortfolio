@@ -12,9 +12,14 @@
 export default {
   name: "LayoutDefault",
   CONTENT: 'content',
-  async asyncData({ $content }) {
-    const content = await $content('content').fetch()
-    return { content }
+  async asyncData({ $content, app }) {
+    const contents = await $content(app.i18n.locale,'content').fetch()
+    return {
+      contents: contents.map((contentItem) => ({
+        ...contentItem,
+        path: contentItem.path.replace(`/${app.i18n.locale}`, ''),
+      }))
+    }
   },
 };
 </script>

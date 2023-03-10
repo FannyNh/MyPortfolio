@@ -1,13 +1,17 @@
 <script setup>
-  const { data : projects, pending, error } = await useAsyncData('projects', () => queryContent('/projects').where({ draft: false }).only(['head', 'images','id','category','heroimage','_path']).find())
-  console.log(projects)
+import { useI18n, useLocalePath } from '#imports'
+const { locale } = useI18n()
+const path = `${locale.value}/projects`
+const localePath = useLocalePath()
+  const { data : projects, pending, error } = await useAsyncData('projects', () => queryContent(localePath('projects')).where({ draft: false }).only(['head', 'images','id','category','heroimage','_path']).find())
+  // const { data : projects, pending, error } = await useAsyncData('projects', () => queryContent(path).where({ draft: false }).only(['head', 'images','id','category','heroimage','_path']).find())
+
 </script>
 
 <template>
   <div v-if="!pending" class="grid">
     <div v-if="error"> {{error}} reload the page</div>
     <div  class="flex flex-wrap justify-center  item-center home">
-      
       <AppCard
       v-for="project of projects"
       :key="project.id"

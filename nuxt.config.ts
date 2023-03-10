@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt/config'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -16,8 +16,34 @@ export default defineNuxtConfig({
         ],
       },
     ],
+    [
+      '@nuxtjs/i18n',
+      {
+        strategy: 'prefix',
+        defaultLocale: 'en',
+        langDir: 'locales/',
+        locales: [
+          {
+            code: 'fr',
+            iso: 'fr-fr',
+            name: 'Français',
+            file: 'fr-FR.json'
+          }, {
+            code: 'en',
+            iso: 'en-US',
+            name: 'English',
+            file: 'en-US.json'
+          },
+        ],
+
+        vueI18n: {
+          fallbackLocale: 'en'
+        }
+      }
+    ]
   ],
   css: [
     '@/assets/css/tailwind.scss'
-  ]
+  ],
+  devServerHandlers: []
 })
