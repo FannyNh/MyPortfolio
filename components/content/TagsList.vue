@@ -21,7 +21,7 @@ defineProps({
     "
   > -->
 
-  <ul class="flex flex-wrap tagList">
+  <ul class="flex flex-wrap tagList lg:w-3/5">
     <div class="tagList__stroke "></div>
     <h3 class="tagList__title">
       {{ title }}
@@ -40,9 +40,8 @@ defineProps({
 
 <style lang="scss" scoped>
 .tagList {
-  width: 100%;
   min-height: 150px;
-  @apply bg-white shadow-md shadow-slate-100 my-5 p-2 rounded-b-md relative overflow-hidden;
+  @apply bg-white shadow-md shadow-slate-100 my-5 p-2 rounded-b-md relative overflow-hidden mx-auto;
   &__stroke {
     @apply absolute w-full;
     height: 3px;

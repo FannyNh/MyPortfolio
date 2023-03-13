@@ -28,7 +28,7 @@ export default {
 </script>
 <style lang="scss">
 .projectContainer {
-  @apply absolute w-full  p-2 lg:p-5 overflow-x-auto bg-slate-100;
+  @apply absolute w-full  p-2 lg:p-0 overflow-x-auto bg-slate-100;
 }
 </style>
 

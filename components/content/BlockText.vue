@@ -24,7 +24,7 @@ defineProps({
       grid--sidelist
     "
   > -->
-  <div class="flex flex-wrap blockText my-5">
+  <div class="flex flex-wrap blockText my-5 lg:w-3/5">
  
     <h3 class="blockText__title">
       {{ title }}
@@ -39,9 +39,8 @@ defineProps({
     
     <style lang="scss" scoped>
 .blockText {
-  width: 100%;
   min-height: 150px;
-  @apply bg-white shadow-lg shadow-slate-100  p-3 rounded-lg relative overflow-hidden;
+  @apply bg-white shadow-lg shadow-slate-100  p-3 rounded-lg relative overflow-hidden mx-auto;
   &__title {
     @apply text-violet-600 text-2xl lg:text-lg  font-semibold uppercase w-full pt-5;
   }

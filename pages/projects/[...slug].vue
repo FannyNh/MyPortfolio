@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full lg:w-3/5 py-20">
+  <main class="w-full py-20">
     <ContentDoc v-slot="{ doc }">
       <h2>{{ doc.head.title }}</h2>
       <ContentRenderer :value="doc" />

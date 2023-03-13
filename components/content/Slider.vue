@@ -1,6 +1,6 @@
 
 <template>
-  <Splide  :options="options" aria-label="My Favorite Images" class="slider">
+  <Splide  :options="options" aria-label="My Favorite Images" class="slider lg:w-3/5">
     <SplideSlide v-for="image of images" :key="image.id">
       <img :src="`/images/${image.src}`" :alt="image.alt">
     </SplideSlide>
@@ -33,7 +33,7 @@
 </script>
 <style>
   .slider {
-    @apply my-5 lg:my-12;
+    @apply my-5 lg:my-12 mx-auto;
     height: auto;
   }
   .splide__slide {
