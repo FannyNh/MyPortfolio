@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       '@nuxtjs/i18n',
       {
         strategy: 'prefix',
-        defaultLocale: 'en',
+        defaultLocale: 'fr',
         langDir: 'locales/',
         locales: [
           {
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         ],
 
         vueI18n: {
-          fallbackLocale: 'en'
+          fallbackLocale: 'fr'
         }
       }
     ]

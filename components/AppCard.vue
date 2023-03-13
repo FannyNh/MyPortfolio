@@ -19,6 +19,7 @@ defineProps({
       <h3>{{ project.head.title }}</h3>
       <p>{{ project.head.description }}</p>
     </div>
+    <div class="card__label"><span>{{project.mainLabel ? project.mainLabel : project.category}}</span></div>
   </div>
   </nuxt-link>
 
@@ -28,17 +29,23 @@ defineProps({
   @apply flex justify-center w-full md:w-96 h-96;
 }
 .card {
-  @apply w-full m-2 md:m-4 bg-white rounded-md shadow-md border  overflow-hidden transform transition duration-1000 hover:scale-105;
+  @apply relative w-full m-2 md:m-4 bg-white rounded-md shadow-md border  overflow-hidden transform transition duration-1000 hover:scale-105;
   &.design{
     @apply border-purple-600;
     h3 {
       @apply text-purple-600;
+    }
+    .card__label{
+      @apply bg-purple-600;
     }
   }
   &.tech{
     @apply border-orange-600;
     h3 {
       @apply text-orange-600;
+    }
+    .card__label{
+      @apply bg-orange-600;
     }
   }
   &__image {
@@ -52,8 +59,17 @@ defineProps({
   }
   &__texts {
     @apply text-center w-full p-3;
+    h3 {
+      @apply mb-1
+    }
     p {
-      @apply text-left text-slate-600 font-light;
+      @apply p-1 text-slate-600 font-light;
+    }
+  }
+  &__label{
+    @apply absolute top-2 right-2 rounded-md flex items-center;
+    span{
+      @apply text-sm font-medium text-center text-white my-1 mx-3
     }
   }
 }

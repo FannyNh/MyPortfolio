@@ -1,13 +1,14 @@
 ---
 head:
-    title: Sixth June Developement & Design
-    description: Front-End / Design. Crafting websites with strong impact.
+    title: Sixth June Développement Website
+    description: Conception d'un site web à fort impact pour le site e-commerce et B2B.
 
     technologies: 
         - HTML
         - CSS
         - JavaScript
-        - React.js
+        - Magento
+        - Php
     live: 
     repository: 
 images:
@@ -18,25 +19,27 @@ images:
 id: 14
 draft: false
 category: tech
+mainLabel: CMS
+order: 30
 heroimage: "projects/sixthjune-site/hero.jpeg"
 ---
 ::blockText
 ---
 title: "Details"
-subtitle: Front-End / Design 
-textContent: "Creative Developper. Crafting websites with strong impact. Design and develope visual interface. To create solid responsive components and create a modular template page system."
+subtitle: Front-End Développeuse / Designer Web 
+textContent: "Concevoir un site web à fort impact. Concevoir et développer l'interface visuelle. Créer des composants solides et réactifs et créer un système de pages de template flexible."
 ---
 ::
 ::blockText
 ---
-title: descriptif of the jobs
-subtitle: this is all the task i made during my mission
+title: Description de la mission
+subtitle: Liste exhaustive des tâches éffectuées
 textContent: "
--Maintain, Update and Create  CMS-Websites / Shopify / Magento<br/>
--Dev Custom-Themes and layouts<br/>
--Maintain, Update and Create  CMS-Websites / Shopify / Magento<br/>
--Transfer visions and ideas into sophisticated design concepts using wireframes and interactive prototypes<br/>
--Create high quality graphic content for social media, newsletters, website articles, and printed content for product brochures, flyers, and distributed media, build inspiring layout Application Notes, Success Stories, and PowerPoint presentations<br/>"
+-Maintenir, mettre à jour et créer des sites web CMS / Shopify / Magentoo<br/>
+-Développement des thèmes et templates<br/>
+-Maintenance et mise à jour des sites<br/>
+-Création des designs et maquettes<br/>
+-Création des contenus à destination des sites web et médias sociaux<br/>"
 ---
 ::
 ::tagsList

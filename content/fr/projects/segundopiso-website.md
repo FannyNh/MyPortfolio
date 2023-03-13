@@ -1,13 +1,16 @@
 ---
 head:
-    title: Segundo Piso Developement & Design
-    description: Front-End / Design. Crafting websites with strong impact.
+    title: Segundo Piso Développement & Design
+    description: Front-End Développeur / Designer. Création du site ecommerce.
 
     technologies: 
         - HTML
         - CSS
         - JavaScript
-        - React.js
+        - Php
+        - WooCommerce
+        - Photoshop
+        - Adobe xd
     live: 
     repository: 
 images:
@@ -18,29 +21,31 @@ images:
 id: 14
 draft: false
 category: tech
+mainLabel: CMS
+order: 40
 heroimage: "projects/segundopiso/hero.png"
 ---
 ::blockText
 ---
-title: "Details"
-subtitle: Front-End / Design 
-textContent: "Creative Developper. Crafting websites with strong impact. Design and develope visual interface. To create solid responsive components and create a modular template page system."
+title: "Détails"
+subtitle: Front-End Développeur / Design 
+textContent: "Concevoir un site web à fort impact. Concevoir et développer une interface visuelle. Créer des composants réactifs solides et créer un système de pages modulaires."
 ---
 ::
 ::blockText
 ---
-title: descriptif of the jobs
-subtitle: this is all the task i made during my mission
+title: Description de la mission
+subtitle: Liste exhaustive des tâches éffectuées
 textContent: "
--Maintain, Update and Create  CMS-Websites / Wordpress<br/>
--Dev Custom-Themes and layouts<br/>
--Transfer visions and ideas into sophisticated design concepts using wireframes and interactive prototypes<br/>
--Create high quality graphic content for social media, newsletters, website articles, and printed content for product brochures, flyers, and distributed media, build inspiring layout Application Notes, Success Stories, and PowerPoint presentations<br/>"
+-Maintenir, mettre à jour et créer un site web CMS<br/>
+-Développement du theme et templates de pages<br/>
+-Création des maquettes<br/>
+-Créations des contenus digitaux<br/>"
 ---
 ::
 ::tagsList
 ---
-title: list of the technologies
+title: liste des technologies
 tagList: [{id:4, name: "Javascript", color: "purple"},{id:8, name: "BOOTSTRAP", color: "purple"},{id:5, name: "GSAP", color: "purple"},{id:6, name: "CSS3", color: "purple"},{id:7, name: "HTML5", color: "purple"},{id:10, name: "PHP", color: "purple"},{id:13, name: "APIs", color: "purple"},{id:14, name: "SQL", color: "purple"},{id:12, name: "Sftp", color: "red"},{id:11, name: "Git", color: "red"},{id:1, name: "Wordpress", color: "red"},{id:2, name: "Photoshop", color: "green"}, {id:3, name: "Adobe xd", color: "green"},{id:4, name: "Trello", color: "default"},{id:4, name: "Kanban", color: "default"}]
 ---
 ::

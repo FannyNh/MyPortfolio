@@ -1,13 +1,14 @@
 ---
 head:
-    title: Stellantis Developement
-    description: Creative Developer. Build awesome web app experiences using VueJS. Translate designs and wireframes into quality code
+    title: Pongo Front End Développement 
+    description: Construire applications web d'outil marketing automatisés.
 
     technologies: 
         - HTML
         - CSS
         - JavaScript
-        - React.js
+        - Php
+        - Vue.js
     live: 
     repository: 
 images:
@@ -18,34 +19,40 @@ images:
 id: 14
 draft: false
 category: tech
-mainLabel: Nuxt JS
-order: 10
-heroimage: "projects/stellantis/hero.png"
+mainLabel: Vue JS
+order: 0
+heroimage: "projects/pongo/hero.png"
 ---
-::slider
+::blockText
 ---
-images: [{id:1,src : "projects/stellantis/MicrosoftTeams-image-46.jpeg",alt : "retouching"}]
-title: Mockup
+title: "Details de l'entrerpise"
+subtitle: Pongo, est une solution qui nous facilite le parcours client 
+textContent: "Pas d'application à télécharger, pas de carte de fidélité à transporter, pas de formulaire d'inscription à remplir. Grâce à un écran tactile intégré au point de vente, nous aidons les commerçants à créer différents types de systèmes d'engagement client (jeux concours, programmes de fidélité, parrainage, événements privés...etc)."
 ---
 ::
 ::blockText
 ---
-title: descriptif of the jobs
-subtitle: this is all the task i made during my mission
+title: Description de la mission
+subtitle: Liste exhaustive des tâches éffectuées
 textContent: "
--Maintain, Update and Expand  Websites <br/>
--Add new features to the JavaScript library <br/>
--Dev Custom-Themes and layouts<br/>
--Create, test and maintain design system & component<br/>
--Code reviews and source control<br/>
--Browser debugging and optimization<br/>
+-Maintenir, mettre à jour et développer les sites web <br/>
+-Ajouter de nouvelles fonctionnalités à la bibliothèque d'animation JS<br/>
+-Développement des pages et templates<br/>
+-Créer, tester et maintenir le système de conception et les composants<br/>
+-Revue de code et fixation de bug<br/>
 "
 ---
 ::
 ::tagsList
 ---
-title: list of the technologies
+title: liste des technologies
 tagList: [{id:4, name: "ES6", color: "purple"},{id:8, name: "BOOTSTRAPVue", color: "purple"},{id:5, name: "VUEJS", color: "purple"},{id:7, name: "NUXT JS", color: "purple"},{id:17, name: "VUEX", color: "purple"},{id:6, name: "CSS3/SASS", color: "purple"},{id:10, name: "AXIOS", color: "purple"},{id:13, name: "APIs", color: "purple"},{id:14, name: "Bitbucket", color: "purple"},{id:12, name: "Sftp", color: "red"},{id:11, name: "Git", color: "red"},{id:1, name: "Firebase", color: "red"},{id:9, name: "Bitbucket", color: "red"}, {id:2, name: "Photoshop", color: "green"}, {id:3, name: "Adobe xd", color: "green"},{id:4, name: "Trello", color: "default"},{id:4, name: "Kanban", color: "default"}]
+---
+::
+::slider
+---
+images: [{id:1,src : "projects/stellantis/MicrosoftTeams-image-46.jpeg",alt : "retouching"}]
+title: Mockup
 ---
 ::
 ::slider

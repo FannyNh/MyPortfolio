@@ -16,7 +16,7 @@ images:
     - https://drive.google.com/file/d/1m6I-YoMWaOx9Er-Z2SbV6AgnPL-8C6KI/view?usp=sharing
     - https://drive.google.com/file/d/1m6I-YoMWaOx9Er-Z2SbV6AgnPL-8C6KI/view?usp=sharing
 id: 12
-draft: false
+draft: true
 category: design
 heroimage: "projects/project-1/hero.jpeg"
 ---

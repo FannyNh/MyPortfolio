@@ -1,13 +1,14 @@
 ---
 head:
-    title: Sixth June Visual design
-    description: Visual Retouching of all digital projects for stills. This includes the related content production for brand- and product campaigns, lookbooks or shows.
+    title: Sixth June Web Design
+    description: Retouche photo et infographie pour l'ensembles des projects digitaux.
 
     technologies: 
         - HTML
         - CSS
         - JavaScript
-        - React.js
+        - Photoshop
+        - After Effect
     live: 
     repository: 
 images:
@@ -16,27 +17,24 @@ images:
     - https://drive.google.com/file/d/1m6I-YoMWaOx9Er-Z2SbV6AgnPL-8C6KI/view?usp=sharing
     - https://drive.google.com/file/d/1m6I-YoMWaOx9Er-Z2SbV6AgnPL-8C6KI/view?usp=sharing
 id: 12
-draft: false
+draft: true
 category: design
 heroimage: "projects/project-1/hero.jpeg"
 ---
 ::blockText
 ---
-title: descriptif of the jobs
-subtitle: this is all the task i made during my mission
-textContent: "-Retouch upwards of 100+ images on a daily basis in accordance with established guidelines.<br/>
--Ensure quality control and consistency is kept within each designated class as established by the Senior Retoucher and Post Production Manager, including cropping, exposure, color, product retouching, etc.<br/>
--Update the status of each product in the established tracking system(s).<br/>
--Manage file uploads and backup, keeping the e-commerce server(s) clean and organized.
-Archive all work to create and maintain a digital library that is easily accessible<br/>
--Train and assist team on a variety of projects including but not limited to : women’s and men’s apparel, home, flats, and on location imagery<br/>
--Make changes as needed to live images that do not meet image standard
-Field requests from web production coordinators and buyers pertaining to designated categories, including renaming, reuploading, and archiving<br/>"
+title: Description de la mission
+subtitle: Liste exhaustive des tâches éffectuées
+textContent: "-Retouches pouvant aller jusqu'a plus d'une centaines de modèles par jour tout en respectant la charte graphique.<br/>
+-S'assurer du control qualité et de la régularité des contenus. Cette taches inclue le cropping, la gestion des contrates et lumières, le color tone, la retouche produit et modèle.<br/>
+-Mise à jour du status de chaque produits dans l'application de tracking.<br/>
+-Management des fichiers de téléchargement et backup et s'assurer de la bonne organisation de la base de donnée à destination du site e-commerce. Création et maintenance de la library pour assurer une utilisation claire et facile aux membre de l'entreprise.<br/>
+-Formation et assistance des membres de l'entreprise sur les projects incluants la collection homme et femme, accessoires et location d'image<br/>"
 ---
 ::
 ::tagsList
 ---
-title: list of the technologies
+title: liste des technologies
 tagList: [{id:1, name: "Camera Raw", color: "red"}, {id:2, name: "Photoshop", color: "purple"}, {id:3, name: "lightroom", color: "green"},{id:4, name: "default color", color: "default"}]
 ---
 ::

@@ -18,6 +18,8 @@ images:
 id: 14
 draft: false
 category: tech
+mainLabel: CMS
+order: 40
 heroimage: "projects/segundopiso/hero.png"
 ---
 ::blockText

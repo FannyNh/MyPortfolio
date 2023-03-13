@@ -3,9 +3,8 @@ import { useI18n, useLocalePath } from '#imports'
 const { locale } = useI18n()
 const path = `${locale.value}/projects`
 const localePath = useLocalePath()
-  const { data : projects, pending, error } = await useAsyncData('projects', () => queryContent(localePath('projects')).where({ draft: false }).only(['head', 'images','id','category','heroimage','_path']).find())
-  // const { data : projects, pending, error } = await useAsyncData('projects', () => queryContent(path).where({ draft: false }).only(['head', 'images','id','category','heroimage','_path']).find())
-
+  const { data : projects, pending, error } = await useAsyncData('projects', () => queryContent(localePath('projects')).where({ draft: false }).only(['head', 'images','id','category','mainLabel','heroimage','_path','order']).sort({ order: 1 }).find())
+  console.log(projects.value)
 </script>
 
 <template>

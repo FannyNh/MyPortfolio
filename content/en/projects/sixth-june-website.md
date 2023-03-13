@@ -18,6 +18,8 @@ images:
 id: 14
 draft: false
 category: tech
+mainLabel: CMS
+order: 30
 heroimage: "projects/sixthjune-site/hero.jpeg"
 ---
 ::blockText
