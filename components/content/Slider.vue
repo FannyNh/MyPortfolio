@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-  import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
   import '@splidejs/vue-splide/css';
   defineProps({
     title: {
