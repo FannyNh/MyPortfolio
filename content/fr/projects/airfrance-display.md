@@ -18,8 +18,9 @@ images:
     - https://drive.google.com/file/d/1m6I-YoMWaOx9Er-Z2SbV6AgnPL-8C6KI/view?usp=sharing
     - https://drive.google.com/file/d/1m6I-YoMWaOx9Er-Z2SbV6AgnPL-8C6KI/view?usp=sharing
 id: 14
-draft: true
+draft: false
 category: tech
+order: 25
 mainLabel: React JS
 heroimage: "projects/airfrance-display/hero.png"
 ---
