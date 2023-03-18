@@ -10,5 +10,12 @@
             "home":"Home",
             "resume":"Resume"
         }
+    },
+  "project": {
+    "pongo": {
+      "brick": {
+        "link": "Voir la library"
+      }
     }
+  }
 }
