@@ -45,7 +45,7 @@ defineProps({
     @apply text-violet-600 text-2xl lg:text-lg  font-semibold uppercase w-full pt-5;
   }
   &__subtitle {
-    @apply text-orange-400 text-xl lg:text-base  font-medium  uppercase w-full;
+    @apply text-orange-400 text-xl lg:text-base  font-medium w-full;
   }
   &__textContent {
     @apply text-slate-600 text-base  font-medium  w-full py-3;
