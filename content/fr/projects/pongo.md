@@ -23,11 +23,17 @@ mainLabel: Vue JS
 order: 0
 heroimage: "projects/pongo/hero.png"
 ---
+::
 ::blockText
 ---
 title: "Details de l'entreprise"
 subtitle: Pongo, est une solution qui nous facilite le parcours client 
 textContent: "Pas d'application à télécharger, pas de carte de fidélité à transporter, pas de formulaire d'inscription à remplir. Grâce à un écran tactile intégré au point de vente, nous aidons les commerçants à créer différents types de systèmes d'engagement client (jeux concours, programmes de fidélité, parrainage, événements privés...etc)."
+---
+::
+::landingPage
+---
+image: {id:1,src : "projects/pongo/landingPage-pongo-1.png",alt : "image dashboard pongo"}
 ---
 ::
 ::blockText
@@ -47,11 +53,6 @@ textContent: "
 ---
 title: liste des technologies
 tagList: [{id:5, name: "VUEJS", color: "purple"},{id:4, name: "ES6", color: "purple"},{id:8, name: "tailwind", color: "purple"},{id:7, name: "docker", color: "purple"},{id:17, name: "php", color: "purple"},{id:6, name: "vercel", color: "purple"},{id:10, name: "AXIOS", color: "purple"},{id:13, name: "APIs", color: "purple"},{id:14, name: "github", color: "purple"},{id:1, name: "Aws", color: "red"}, {id:2, name: "Figma", color: "green"},{id:4, name: "Jira", color: "default"},{id:4, name: "Kanban", color: "default"}]
----
-::
-::landingPage
----
-image: {id:1,src : "projects/pongo/landingPage-pongo-1.png",alt : "image dashboard pongo"}
 ---
 ::
 ::blockText
