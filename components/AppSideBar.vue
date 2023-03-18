@@ -17,31 +17,30 @@
     <hr class="mt-10 my-5" />
     <div class="text-xl " @click="toggleMenu" >
       <BaseTransitionGroup class="flex flex-col" >
-        <nuxt-link v-if="state.toggle" key="1" to="/" >Home</nuxt-link>
-        <nuxt-link v-if="state.toggle" key="2" to="/projects"
-          >Projects</nuxt-link
-        >
+        <nuxt-link v-if="state.toggle" key="1" :to="localePath('/')" >Home</nuxt-link>
+        <nuxt-link v-if="state.toggle" key="2"  :to="localePath('/projects')">Projects</nuxt-link>
         <a v-if="state.toggle" key="5" href="https://github.com">Github</a>
+        <nuxt-link class=" lang py-1 px-3 ml-5"  :to="switchLocalePath('en')">EN</nuxt-link>
+        <nuxt-link class="lang py-1 px-3"  :to="switchLocalePath('fr')">FR</nuxt-link>
       </BaseTransitionGroup>
     </div>
   </div>
 </BaseTransitionGroup>
 </template>
-  <script>
-import BaseTransitionGroup from "./base/BaseTransitionGroup.vue";
-export default {
-  components: { BaseTransitionGroup },
-};
-</script>
+
 <script setup>
+import BaseTransitionGroup from "./base/BaseTransitionGroup.vue";
 import { useToggleStore } from "~~/store/toggle";
 const state = useToggleStore();
+const switchLocalePath = useSwitchLocalePath();
+const localePath = useLocalePath()
+const locale = useI18n()
 function toggleMenu(){
     state.setToggle(!state.toggle);
 }
 </script>
   
-  <style scoped>
+<style scoped lang="scss">
 a {
   @apply py-2 text-base;
 }

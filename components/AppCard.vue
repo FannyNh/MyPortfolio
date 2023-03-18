@@ -24,7 +24,7 @@ defineProps({
   </nuxt-link>
 
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .card__wrapper{
   @apply flex justify-center w-full md:w-96 h-96;
 }
@@ -63,7 +63,7 @@ defineProps({
       @apply mb-1
     }
     p {
-      @apply p-1 text-slate-600 font-light;
+      @apply p-1 text-slate-600 font-light text-ellipsis text-sm;
     }
   }
   &__label{
