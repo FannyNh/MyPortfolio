@@ -20,8 +20,8 @@
         <nuxt-link v-if="state.toggle" key="1" :to="localePath('/')" >Home</nuxt-link>
         <nuxt-link v-if="state.toggle" key="2"  :to="localePath('/projects')">Projects</nuxt-link>
         <a v-if="state.toggle" key="5" href="https://github.com">Github</a>
-        <nuxt-link class=" lang py-1 px-3 ml-5"  :to="switchLocalePath('en')">EN</nuxt-link>
-        <nuxt-link class="lang py-1 px-3"  :to="switchLocalePath('fr')">FR</nuxt-link>
+        <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
+        <nuxt-link :to="switchLocalePath('fr')">FR</nuxt-link>
       </BaseTransitionGroup>
     </div>
   </div>
@@ -43,5 +43,8 @@ function toggleMenu(){
 <style scoped lang="scss">
 a {
   @apply py-2 text-base;
+}
+.lang{
+  @apply py-1 px-3;
 }
 </style>
