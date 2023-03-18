@@ -63,7 +63,7 @@ defineProps({
       @apply mb-1
     }
     p {
-      @apply p-1 text-slate-600 font-light text-ellipsis text-sm;
+      @apply p-1 text-slate-600 font-light text-ellipsis text-sm md:text-base;
     }
   }
   &__label{
