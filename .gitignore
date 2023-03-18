@@ -994,3 +994,8 @@ dist
 .output/server/chunks/raw/segundopiso-website.mjs.map
 assets/.DS_Store
 public/images/.DS_Store
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/MyPortfolio.iml
+/.idea/vcs.xml
+/.idea/.gitignore
