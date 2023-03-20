@@ -69,12 +69,12 @@ textContent: "
 ::
 ::blockText
 ---
-title:Projects on which I participated 1/4
-subtitle: "The admin: internal tool for the management of contracts, customers, sales products, billing, assistance."
+title: Projects on which I participated 1/4
+subtitle: "admin : internal platform for diverse workers of the company"
 textContent: "
-- Development of the template creation, update, deletion and listing page. <br/>
-- Development of the listing of offered periods<br/>
-"
+- Développement de la page de création de template, update, suppression, listing. <br/>
+- Développement du listing de périodes offertes<br/>
+  "
 ---
 ::
 ::slider
