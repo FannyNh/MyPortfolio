@@ -121,8 +121,8 @@ image: {id:1,src : "projects/pongo/landing-jeu-1.png",alt : "image dashboard pon
 ::
 ::blockText
 ---
-title: "Brick Library vuejs tailwind 4/4"
-subtitle: "Jeu concours: Plugin pour permettre aux marchants de proposer un jeu de roulette pour gagner des prix. Peut être connecté aux avis google"
+title: "Projets sur lesquels j’ai participé 4/4"
+subtitle: "Brick Library vuejs tailwind"
 textContent: "
 - Amélioration, création et customisation des composants<br/>
 - Développement des composables<br/>
