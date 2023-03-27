@@ -3,7 +3,7 @@
     <nuxt-link :to="localePath('/')" class="py-1 px-3 ">{{$t('home.navigation.home')}}</nuxt-link>
     <nuxt-link :to="localePath('/projects')" class="py-1 px-3">Projects</nuxt-link>
     <nuxt-link
-      to="https://www.linkedin.com/in/fanny-nhouyvanisvong-design/"
+      to="https://www.linkedin.com/in/fanny-nhouyvanisvong/"
       class="py-1 px-3"
     >Linkedin</nuxt-link>
     <nuxt-link class=" lang py-1 px-3 ml-5"  :to="switchLocalePath('en')">EN</nuxt-link>
