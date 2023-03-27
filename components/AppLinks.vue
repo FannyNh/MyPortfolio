@@ -5,6 +5,7 @@
     <nuxt-link
       to="https://www.linkedin.com/in/fanny-nhouyvanisvong/"
       class="py-1 px-3"
+      target="_blank"
     >Linkedin</nuxt-link>
     <nuxt-link class=" lang py-1 px-3 ml-5"  :to="switchLocalePath('en')">EN</nuxt-link>
     <nuxt-link class="lang py-1 px-3"  :to="switchLocalePath('fr')">FR</nuxt-link>
