@@ -58,7 +58,7 @@
         </li>
         <li>
           <a
-            href="/cv-2023.pdf"
+            :href="`${$t('home.navigation.linkResume')}.pdf`"
             target="_blank"
             class="link--hero"
             download

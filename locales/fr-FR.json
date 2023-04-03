@@ -8,7 +8,8 @@
         },
         "navigation":{
             "home":"Accueil",
-            "resume":"CV"
+            "resume":"CV",
+            "linkResume": "cv-2023-fr"
         }
     },
   "project": {
