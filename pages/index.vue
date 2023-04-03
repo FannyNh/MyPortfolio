@@ -36,7 +36,7 @@
         </li>
         <li>
           <nuxt-link
-            to="https://www.linkedin.com/in/fanny-nhouyvanisvong-design/"
+            to="https://www.linkedin.com/in/fanny-nhouyvanisvong/"
             target="_blank"
             class="link--hero"
           >
