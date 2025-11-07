@@ -19,9 +19,9 @@ images:
 id: 14
 draft: false
 category: tech
-mainLabel: Vue JS
+mainLabel: Fullstack
 order: 0
-heroimage: "projects/eldora/landing.png"
+heroimage: "projects/eldora/eldora.png"
 ---
 ::
 ::blockText
